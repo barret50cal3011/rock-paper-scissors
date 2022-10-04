@@ -15,22 +15,26 @@ const player1_name = document.getElementById("name1");
 const player2_name = document.getElementById("name2");
 const player1_hp = document.getElementById("hp1");
 const player2_hp = document.getElementById("hp2");
-class Hand{
-    constructor(name){
-        this.name = name;
-        this.wins = [];
-    }
-}
+
 class Player{
     constructor(name, hp){
         this.name = name;
         this.hp = hp;
+        this.hand = "";
     }
 }
 
-let hands = [];
+let hand_options;
 let player1 = new Player("", 0);
 let player2 = new Player("", 0);
+
+let hands = [
+    {name: "Rock", wins: ["Lizard", "Scissors"]},
+    {name: "Paper", wins: ["Rock", "Spock"]},
+    {name: "Scissors", wins: ["Paper", "Lizard"]},
+    {name: "Lizard", wins: ["Spock", "Paper"]},
+    {name: "Spock", wins: ["Scissors", "Rock"]}
+];
 
 function init_game(){
     start_button.addEventListener("click", start_battle);
@@ -39,6 +43,8 @@ function init_game(){
 }
 
 function start_battle(){
+
+    //players
     let name1 = input_player1.value;
     let name2 = input_player2.value;
 
@@ -52,10 +58,22 @@ function start_battle(){
     player2_name.innerHTML = player2.name;
     player1_hp.innerHTML = player1.hp;
     player2_hp.innerHTML = player2.hp;
+
+    //hands
+
+    hands.forEach((hand) => {
+        hand_options = `
+        <input type="radio" name="hands" id="${hand.name}"/>
+        <label for="${hand.name}">
+            <p>${hand.name}</p>
+        </label>
+        `;
+        option_section.innerHTML += hand_options;
+    })
 }
 
 function seclect_hand(){
-
+    
 }
 
 function restart(){

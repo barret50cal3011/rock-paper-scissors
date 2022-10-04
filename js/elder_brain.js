@@ -1,5 +1,6 @@
 const start_button = document.getElementById("start-button");
 const select_button = document.getElementById("select-button");
+const restart_button = document.getElementById("restart-button");
 
 const input_player1 = document.getElementById("player1-name");
 const input_player2 = document.getElementById("player2-name");
@@ -34,6 +35,7 @@ let player2 = new Player("", 0);
 function init_game(){
     start_button.addEventListener("click", start_battle);
     select_button.addEventListener("click", seclect_hand);
+    restart_button.addEventListener("click", restart);
 }
 
 function start_battle(){
@@ -54,6 +56,10 @@ function start_battle(){
 
 function seclect_hand(){
 
+}
+
+function restart(){
+    location.reload();
 }
 
 init_game();

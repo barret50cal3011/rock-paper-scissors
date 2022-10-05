@@ -15,6 +15,8 @@ const player1_name = document.getElementById("name1");
 const player2_name = document.getElementById("name2");
 const player1_hp = document.getElementById("hp1");
 const player2_hp = document.getElementById("hp2");
+const player1_hands = document.getElementById("hands1");
+const player2_hands = document.getElementById("hands2");
 
 class Player{
     constructor(name, hp){
@@ -84,18 +86,49 @@ function seclect_hand(){
 
     if(player1.hand != ""){
         select_PC_hand();
+        update_info();
         combat();
     }
 }
 
+function update_info(){
+    let player1_hand = document.createElement("p");
+    let player2_hand = document.createElement("p");
+
+    player1_hand.innerHTML = player1.hand;
+    player2_hand.innerHTML = player2.hand;
+
+    player1_hands.appendChild(player1_hand);
+    player2_hands.appendChild(player2_hand);
+}
+
 function combat(){
     if(player1.hand == player2.hand){
-        alert("You tied");
+        results.innerHTML = "You tied";
+        //alert("You tied");
     }else if(defeats(player1.hand, player2.hand)){
-        alert("You win");
+        results.innerHTML = "You won";
+        player2.hp--;
+        player2_hp.innerHTML = player2.hp;
+        //alert("You win");
     }else{
-        alert("You lost");
+        results.innerHTML = "You lost";
+        player1.hp--;
+        player1_hp.innerHTML = player1.hp;
+        //alert("You lost");
     }
+
+    if(player1.hp == 0){
+        disable_buttons();
+        results.innerHTML = "You lost, try again";
+    }else if(player2.hp == 0){
+        disable_buttons();
+        results.innerHTML = "You won, another round?";
+    }
+}
+
+function disable_buttons(){
+    select_button.disabled = true;
 }
 
 function defeats(hand1, hand2){

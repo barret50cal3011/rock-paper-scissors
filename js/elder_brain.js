@@ -76,8 +76,38 @@ function start_battle(){
 }
 
 function seclect_hand(){
-    select_PC_hand();
-    console.log(player2.hand);
+    
+    hands.forEach((hand) => {
+        hand_checked = document.getElementById(hand.name).checked;
+        if(hand_checked){player1.hand = hand.name;}
+    });
+
+    if(player1.hand != ""){
+        select_PC_hand();
+        combat();
+    }
+}
+
+function combat(){
+    if(player1.hand == player2.hand){
+        alert("You tied");
+    }else if(defeats(player1.hand, player2.hand)){
+        alert("You win");
+    }else{
+        alert("You lost");
+    }
+}
+
+function defeats(hand1, hand2){
+    let defeats = false;
+    hands.forEach((hand) => {
+        if(hand.name == hand1){
+            hand.wins.forEach((win) => {
+                if(win == hand2){defeats = true;}
+            });
+        }
+    })
+    return defeats;
 }
 
 function restart(){

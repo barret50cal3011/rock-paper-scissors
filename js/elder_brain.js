@@ -28,6 +28,9 @@ let hand_options;
 let player1 = new Player("", 0);
 let player2 = new Player("", 0);
 
+//Rules of the game
+//name: Name of the hand
+//wins: Hands that are defeated by the current hand
 let hands = [
     {name: "Rock", wins: ["Lizard", "Scissors"]},
     {name: "Paper", wins: ["Rock", "Spock"]},
@@ -73,11 +76,20 @@ function start_battle(){
 }
 
 function seclect_hand(){
-    
+    select_PC_hand();
+    console.log(player2.hand);
 }
 
 function restart(){
     location.reload();
+}
+
+function select_PC_hand(){
+    player2.hand = hands[rand(0, hands.length - 1)].name;
+}
+
+function rand(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 init_game();

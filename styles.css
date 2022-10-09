@@ -5,3 +5,27 @@ body{
 button{
     font-family: cursive;
 }
+
+#preparation{
+    display: flex;
+}
+
+#options{
+    display: none;
+}
+
+#select{
+    display: none;
+}
+
+#battle{
+    display: none;
+}
+
+#resultsection{
+    display: none;
+}
+
+#restart{
+    display: none;
+}

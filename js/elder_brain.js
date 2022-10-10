@@ -72,9 +72,9 @@ function start_battle() {
 
     hands.forEach((hand) => {
         hand_options = `
-        <input type="radio" name="hands" id="${hand.name}"/>
-        <label for="${hand.name}">
-            <p>${hand.name}</p>
+        <input type="radio" name="hands" id="${hand.name}" class="radio-hands"/>
+        <label class="label-hands" for="${hand.name}">
+            <p class="hand-paragraph">${hand.name}</p>
         </label>
         `;
         option_section.innerHTML += hand_options;

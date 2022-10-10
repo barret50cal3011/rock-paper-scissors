@@ -1,21 +1,69 @@
 body{
     font-family: cursive;
+    background-color: #37E2D5;
+    color: #590696;
+}
+
+input{
+    margin: 5px;
+    color: #590696;
 }
 
 button{
     font-family: cursive;
+    color: #590696;
+    background-color: #C70A80;
+    border-radius: 5px;
+}
+
+#tittle-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #preparation{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#players-prep{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#start-button{
+    background-color: #C70A80;
+    border-radius: 20px;
+    color: #590696;
+    border: 0px;
+    width: 200px;
+    height: 40px;
+    margin: 10px;
 }
 
 #options{
     display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #select{
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#select-button{
+    width: 200px;
+    height: 25px;
 }
 
 #battle{
@@ -28,4 +76,36 @@ button{
 
 #restart{
     display: none;
+}
+
+.tittle{
+    color: #590696;
+}
+
+.player-prep{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-hands{
+    display: none;
+}
+
+.label-hands{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand-paragraph{
+    background-color: #FBCB0A;
+    border-radius: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 25px;
+    padding: 5px;
+
 }

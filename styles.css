@@ -9,6 +9,11 @@ input{
     color: #590696;
 }
 
+input:checked + label{
+    background-color: #590696;
+    color: #FBCB0A;
+}
+
 button{
     font-family: cursive;
     color: #590696;
@@ -66,8 +71,25 @@ button{
     height: 25px;
 }
 
+#result-section{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#result{
+    display: none;
+}
+
 #battle{
     display: none;
+    flex-direction: column;
+}
+
+#players{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #resultsection{
@@ -76,6 +98,7 @@ button{
 
 #restart{
     display: none;
+    justify-content: center;
 }
 
 .tittle{
@@ -89,23 +112,43 @@ button{
     align-items: center;
 }
 
+.player{
+    display: flex;
+    margin: 10px;
+    background-color: #FBCB0A;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+    width: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.player-info{
+    display: flex;
+    justify-content: center;
+}
+
+.hand-info{
+    display: flex;
+    justify-content: center;
+}
+
 .radio-hands{
     display: none;
 }
 
 .label-hands{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hand-paragraph{
     background-color: #FBCB0A;
+    color:#590696;
     border-radius: 10px;
     margin: 10px;
     width: 100px;
     height: 25px;
     padding: 5px;
-
+    align-items: center;
+    justify-content: center;
 }

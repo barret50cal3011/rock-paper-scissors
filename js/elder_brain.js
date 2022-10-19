@@ -11,6 +11,7 @@ const results = document.getElementById("result");
 const select_section = document.getElementById("select");
 const battle_section = document.getElementById("battle");
 const restart_section = document.getElementById("restart");
+const result_section = document.getElementById("result-section");
 
 const player1_info = document.getElementById("player1");
 const player2_info = document.getElementById("player2");
@@ -78,21 +79,23 @@ function start_battle() {
         </label>
         `;
         option_section.innerHTML += hand_options;
-    })
+    });
 
     //Manage displays
     preparation_section.style.display = "none";
     option_section.style.display = "flex";
     select_section.style.display = "flex";
     battle_section.style.display = "flex";
-    results.style.display = "flex"
+    results.style.display = "flex";
 }
 
 function seclect_hand() {
 
     hands.forEach((hand) => {
         hand_checked = document.getElementById(hand.name).checked;
-        if (hand_checked) { player1.hand = hand.name; }
+        if (hand_checked) { 
+            player1.hand = hand.name; 
+        }
     });
 
     if (player1.hand != "") {
@@ -105,6 +108,9 @@ function seclect_hand() {
 function update_info() {
     let player1_hand = document.createElement("p");
     let player2_hand = document.createElement("p");
+
+    player1_hand.className = "hand-info";
+    player2_hand.className = "hand-info";
 
     player1_hand.innerHTML = player1.hand;
     player2_hand.innerHTML = player2.hand;
